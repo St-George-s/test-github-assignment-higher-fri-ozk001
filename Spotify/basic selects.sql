@@ -19,6 +19,14 @@
 -- SELECT album_name FROM Albums;
 
 
-SELECT album_id
-FROM Albums
-WHERE genre_id;
+-- SELECT track_name FROM Tracks;
+
+
+-- -- SELECT album_name FROM Albums WHERE release_year < 2010;
+-- SELECT * FROM Albums;
+
+-- SELECT artist_name
+-- FROM Artists
+-- WHERE artist_id < 10;
+
+-- SELECT * FROM Artists;

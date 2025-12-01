@@ -44,5 +44,3 @@
 
 -- INSERT INTO Artists (artist_id, artist_name)
 -- VALUES (333, ohusdouhsfohu);
-
-SELECT * FROM Artists;

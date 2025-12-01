@@ -43,9 +43,9 @@
 -- JOIN Genres G ON T.genre_id = G.genre_id
 -- WHERE T.genre_id = 3;
 
-SELECT * FROM Albums
-WHERE release_year IN (
-  SELECT release_year
-  FROM Albums
-  WHERE release_year = 2017
-);
+-- SELECT * FROM Albums
+-- WHERE release_year IN (
+--   SELECT release_year
+--   FROM Albums
+--   WHERE release_year = 2017
+-- );

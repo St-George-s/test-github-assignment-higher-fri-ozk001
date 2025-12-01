@@ -17,4 +17,5 @@ FROM Walker W
 JOIN Walk Wa ON W.walkerNO = Wa.walkerNO
 JOIN Route R ON Wa.routeID = R.routeID
 SELECT MAX(distance)
-FROM Route R;
+FROM Route R
+GROUP BY distance

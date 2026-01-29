@@ -43,26 +43,16 @@ def find_max(jumps):
             maximum_value = jumps[counter] 
 
     print(f"The largest value was {maximum_value}") 
+    return maximum_value
 
+def linear_search(jumps, forename, surname, maxJumps):
 
-def linear_search(forename, surname, jumps): 
-    found = False 
-    counter = 0 
-    array_size = len(forename + surname + jumps[counter]) 
-    while counter < array_size and not found: 
-
-        if jumps[counter] == forename: 
-            found = True 
-        else: 
-            counter += 1 
-
-    if found: 
-        print(f"{forename + surname} found at position {counter}") 
-    else: 
-        print("Item not found") 
+    for counter in range(30): 
+        if jumps[counter] == maxJumps: 
+            print(forename[counter] + surname[counter])
 
 # Main program
 entryID, location, forename, surname, jumps = get_athlete_data() # Call function
 gen_bib(entryID, location, forename, surname)
-find_max(jumps)
-linear_search(forename, surname, jumps[counter])
+maxJumps = find_max(jumps)
+linear_search(jumps, forename, surname, maxJumps)

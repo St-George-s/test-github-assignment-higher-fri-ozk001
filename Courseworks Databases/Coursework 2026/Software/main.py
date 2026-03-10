@@ -23,14 +23,27 @@ def get_tool_data():
         return tool_name, manufacturer, dateRented, returned, fee
 
 #step 2: display name of tool and total number of tools by a chosen manufacturer
-def count_occurrences(tool_name, Pliers):
-    number_found = 0
-    for item in tool_name:
-        if item == Pliers:
-        number_found += 1
-    print(f"{number_found} items of {Pliers}")
 
 
+
+
+
+
+#experiment two
+def linear_search(numbers, item_to_find):
+    found = False
+    counter = 0
+    array_size = len(numbers)
+    while counter < array_size and not found:
+        if numbers[counter] == item_to_find:
+            found = True
+        else:
+            counter += 1
+    if found:
+        print (f"{item_to_find} found at position {counter}")
+    else:
+        print(f"item not found")
+    
 
 #experiment
 def count_occurrences(manufacturer):
@@ -74,3 +87,5 @@ def count_occurrences(manufacturer):
 #main program
 tool_name, manufacturer, dateRented, returned, fee = get_tool_data()
 count_occurrences(manufacturer)
+#numbers = [1, 0, 3, 4, 69, 7, 32]
+#linear_search (numbers, 7)

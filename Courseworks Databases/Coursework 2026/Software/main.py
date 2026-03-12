@@ -25,7 +25,17 @@ def get_tool_data():
 #step 2: display name of tool and total number of tools by a chosen manufacturer
 
 
-
+# def get_manufacture_data():
+#     tool_name = []
+#     manufacturer = []
+#     chosen_manufacturer = 'TitanForge'
+    
+#     with open('Courseworks Databases/Coursework 2026/Software/tools.csv', 'r') as file:
+#         reader = csv.DictReader(file)
+#         associated_tools = [row['tool_name'] for row in reader if row['manufacturer']] == chosen_manufacturer
+#         print(f"Tools owned by {chosen_manufacturer}:{associated_tools}")
+        
+#         return tool_name, manufacturer, chosen_manufacturer, associated_tools
 
 
 
@@ -84,8 +94,13 @@ def count_occurrences(manufacturer):
         print(f"PrecisionWorks has {precision_count}")
 
 
+#step 3: calculate late fee for unreturned tools rented in 2025
+def late_fee
+
+
 #main program
 tool_name, manufacturer, dateRented, returned, fee = get_tool_data()
-count_occurrences(manufacturer)
-#numbers = [1, 0, 3, 4, 69, 7, 32]
-#linear_search (numbers, 7)
+#count_occurrences(manufacturer)
+#numbers = [3, 8, 1, 7, 19]
+# linear_search(numbers, 7)
+# get_manufacture_data()

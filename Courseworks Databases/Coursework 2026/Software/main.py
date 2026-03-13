@@ -95,7 +95,43 @@ def count_occurrences(manufacturer):
 
 
 #step 3: calculate late fee for unreturned tools rented in 2025
-def late_fee
+def late_fee():
+    # 3.1 loop for number of tools
+    
+
+    # 3.2 if tool was rented in 2025 and not returned
+
+    # 3.3 if the month is between January and June
+
+    # 3.4 set current fee to 10
+
+    # 3.5 else
+
+    # 3.6 set current fee to 5
+
+    # 3.7 end if
+
+    # 3.8 end if
+
+    # 3.9 end loop
+
+    # 3.10 return fee array
+    return
+
+def stepFour():
+    # 4.1 open file ‘lateTools.csv’ to write
+
+    # 4.2 loop for number of tools
+
+    # 4.3 if current fee is not 0
+
+    # 4.4 write tool name, date rented and fee to file
+
+    # 4.5 end if
+
+    # 4.6 end loop
+
+    # 4.7 close file ‘lateTools.csv
 
 
 #main program

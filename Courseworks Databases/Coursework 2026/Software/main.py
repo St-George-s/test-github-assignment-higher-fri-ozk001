@@ -95,33 +95,35 @@ def count_occurrences(manufacturer):
 
 
 #step 3: calculate late fee for unreturned tools rented in 2025
-def late_fee(tool_name, returned, dateRented, fee):
+def late_fee(returned, dateRented, fee):
     # 3.1 loop for number of tools
-    while dateRented >= 2024:
-        if returned == True: 
-            print(tool_name) 
-        elif returned != True: 
-            print(tool_name, dateRented, fee)
-
+    fee = 0
+    if returned != 'Yes':
+        if dateRented <= int(31/12/2024):
+            print("item")
 
     # 3.2 if tool was rented in 2025 and not returned
+        elif dateRented >= int(31/12/2024):
 
     # 3.3 if the month is between January and June
-
     # 3.4 set current fee to 10
+            if int(1/1/2025) <= dateRented >= int(30/6/2025):
+                fee += 10
 
     # 3.5 else
-
     # 3.6 set current fee to 5
+            else:
+                fee += 5
 
+    else:
+        print("item returned on time")
     # 3.7 end if
-
     # 3.8 end if
-
     # 3.9 end loop
-
     # 3.10 return fee array
     #return returned
+        return fee
+
 
 #def stepFour():
     # 4.1 open file ‘lateTools.csv’ to write
@@ -145,3 +147,4 @@ tool_name, manufacturer, dateRented, returned, fee = get_tool_data()
 #numbers = [3, 8, 1, 7, 19]
 # linear_search(numbers, 7)
 # get_manufacture_data()
+late_fee(returned, dateRented, fee)

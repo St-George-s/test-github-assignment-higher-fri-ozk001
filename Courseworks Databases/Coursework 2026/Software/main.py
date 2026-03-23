@@ -117,6 +117,9 @@ def late_fee(returned, dateRented, fee):
     #return returned
         return fee
 
+age = 17.4
+age = int(age) 
+print(age)  # Output: 17 
 
 #def stepFour():
     # 4.1 open file ‘lateTools.csv’ to write
@@ -133,6 +136,12 @@ def late_fee(returned, dateRented, fee):
 
     # 4.7 close file ‘lateTools.csv
 
+def new_fee(returned, dateRented, fee):
+    for x in range(120):
+        if int(dateRented[x][6:10]) == 2025:
+            if int(dateRented[x][3:5]) <= 6:
+                #fee should be 10
+                print(dateRented)
 
 #main program
 tool_name, manufacturer, dateRented, returned, fee = get_tool_data()
@@ -140,4 +149,6 @@ tool_name, manufacturer, dateRented, returned, fee = get_tool_data()
 #numbers = [3, 8, 1, 7, 19]
 # linear_search(numbers, 7)
 # get_manufacture_data()
-late_fee(returned, dateRented, fee)
+#late_fee(returned, dateRented, fee)
+age = [17.4]
+new_fee(returned, dateRented, fee)

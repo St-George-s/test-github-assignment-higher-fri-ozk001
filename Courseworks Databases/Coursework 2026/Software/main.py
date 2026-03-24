@@ -136,12 +136,39 @@ print(age)  # Output: 17
 
     # 4.7 close file ‘lateTools.csv
 
-def new_fee(returned, dateRented, fee):
+def unreturned(tool_name, returned, dateRented):
+    counter = 0
     for x in range(120):
-        if int(dateRented[x][6:10]) == 2025:
+        if int(dateRented[x][6:10]) == 2025 and returned != 'Yes':
             if int(dateRented[x][3:5]) <= 6:
                 #fee should be 10
-                print(dateRented)
+                counter += 1
+                print(f"fee is 10 of unreturned {tool_name[counter]}")
+            elif int(dateRented[x][3:5]) >= 7:
+                #fee should be five
+                counter += 1
+                print(f"fee is 5 of unreturned {tool_name[counter]}")
+            else:
+                print("idk1")
+        elif int(dateRented[x][6:10]) != 2025 and returned != 'Yes':
+            print("great way to start of the new year, ey?")
+
+def gen_latefee(tool_name, manufacturer, dateRented, returned):
+    with open('data.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        for count in range(len(tool_name)):
+            if int(dateRented[count][6:10]) >= 2025 and returned != 'Yes':
+                lateValue = tool_name[count] + dateRented[count] + str(ord(manufacturer[count]))
+                print (lateValue)    
+                writer.writerow([tool_name[count], lateValue])
+                print()
+        else:
+            print()
+    return tool_name, manufacturer, dateRented, returned
+
+#with open('data.csv', 'w', newline='') as file: 
+#    writer = csv.writer(file) 
+#    writer.writerow(["Name", "Age"]) 
 
 #main program
 tool_name, manufacturer, dateRented, returned, fee = get_tool_data()
@@ -151,4 +178,5 @@ tool_name, manufacturer, dateRented, returned, fee = get_tool_data()
 # get_manufacture_data()
 #late_fee(returned, dateRented, fee)
 age = [17.4]
-new_fee(returned, dateRented, fee)
+#unreturned(tool_name, returned, dateRented)
+gen_latefee(tool_name, manufacturer, dateRented, returned)

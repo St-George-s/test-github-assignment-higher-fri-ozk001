@@ -78,9 +78,9 @@ def count_occurrences(location):
 
 # Main program
 entryID, location, forename, surname, jumps = get_athlete_data() # Call function
-# gen_bib(entryID, location, forename, surname)
-maxJumps = find_max(jumps)
-linear_search(jumps, forename, surname, maxJumps)
+gen_bib(entryID, location, forename, surname)
+#maxJumps = find_max(jumps)
+#linear_search(jumps, forename, surname, maxJumps)
 # count_occurrences(location)
 
 find_max([100, 87, 102, 108, 95])

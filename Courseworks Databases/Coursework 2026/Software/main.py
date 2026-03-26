@@ -137,34 +137,33 @@ print(age)  # Output: 17
     # 4.7 close file ‘lateTools.csv
 
 def unreturned(tool_name, returned, dateRented):
-    counter = 0
     for x in range(120):
         if int(dateRented[x][6:10]) == 2025 and returned != 'Yes':
             if int(dateRented[x][3:5]) <= 6:
                 #fee should be 10
-                counter += 1
-                print(f"fee is 10 of unreturned {tool_name[counter]}")
+
+                print(f"fee is 10 of unreturned {tool_name[x]}")
             elif int(dateRented[x][3:5]) >= 7:
                 #fee should be five
-                counter += 1
-                print(f"fee is 5 of unreturned {tool_name[counter]}")
+
+                print(f"fee is 5 of unreturned {tool_name[x]}")
             else:
                 print("idk1")
         elif int(dateRented[x][6:10]) != 2025 and returned != 'Yes':
             print("great way to start of the new year, ey?")
+        else:
+            pass
 
-def gen_latefee(tool_name, manufacturer, dateRented, returned):
+
+def gen_fee(tool_name, dateRented, fee):
     with open('data.csv', 'w', newline='') as file:
         writer = csv.writer(file)
         for count in range(len(tool_name)):
-            if int(dateRented[count][6:10]) >= 2025 and returned != 'Yes':
-                lateValue = tool_name[count] + dateRented[count] + str(ord(manufacturer[count]))
-                print (lateValue)    
-                writer.writerow([tool_name[count], lateValue])
-                print()
-        else:
+            feeValue = dateRented[count][3:5] + surname[count] + str(ord(location[count][0]))
+            print (feeValue)    
+            writer.writerow([tool_name[count], feeValue])
             print()
-    return tool_name, manufacturer, dateRented, returned
+    pass
 
 #with open('data.csv', 'w', newline='') as file: 
 #    writer = csv.writer(file) 
@@ -178,5 +177,6 @@ tool_name, manufacturer, dateRented, returned, fee = get_tool_data()
 # get_manufacture_data()
 #late_fee(returned, dateRented, fee)
 age = [17.4]
-#unreturned(tool_name, returned, dateRented)
-gen_latefee(tool_name, manufacturer, dateRented, returned)
+unreturned(tool_name, returned, dateRented)
+#gen_latefee(tool_name, manufacturer, dateRented, returned)
+gen_fee(tool_name, dateRented, fee)
